@@ -1,4 +1,4 @@
-# Wanderlust - Your Ultimate Travel Blog 🌍✈️
+#  Wanderlust - Your Ultimate Travel Blog 🌍✈️
 
 WanderLust is a simple MERN travel blog website ✈ This project is aimed to help people to contribute in open source, upskill in react and also master git.
 
@@ -95,6 +95,7 @@ _I'd love for you to make the most of this project - it's all about learning, he
    npm run dev
    ```
 
+<<<<<<< HEAD
 ### Setting up with Docker
 
 1.  **Ensure Docker and Docker Compose are Installed**
@@ -122,6 +123,8 @@ _I'd love for you to make the most of this project - it's all about learning, he
     ```
     This command will build the Docker images and start the containers for the backend and frontend, enabling you to access the Wanderlust application.
 
+=======
+>>>>>>> master
 ## 🌟 Ready to Contribute?
 
 Kindly go through [CONTRIBUTING.md](https://github.com/krishnaacharyaa/wanderlust/blob/main/.github/CONTRIBUTING.md) to understand everything from setup to contributing guidelines.
