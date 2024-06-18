@@ -38,7 +38,6 @@ export const RESPONSE_MESSAGES = {
     INVALID_PASSWORD: 'Invalid password.',
   },
 };
-<<<<<<< HEAD
 
 export const REDIS_KEYS = {
   ALL_POSTS: 'all-posts',
@@ -47,5 +46,3 @@ export const REDIS_KEYS = {
 };
 
 export const REDIS_PREFIX = 'post-cache';
-=======
->>>>>>> master
