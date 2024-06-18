@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx
+  namespace: wanderlust   # Replace 'your-namespace-name' with your desired namespace
 spec:
   containers:
   - name: nginx
