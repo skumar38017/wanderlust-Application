@@ -10,4 +10,4 @@ sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
 # Network Plugin = calico
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
 
-kubeadm token create --print-join-command
+  kubeadm token create --print-join-command
