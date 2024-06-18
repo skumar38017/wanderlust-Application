@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend-pod
+  namespace: wanderlust  # Ensure this matches the namespace in your Deployment
+  labels:
+    app: backend
+spec:
+  containers:
+  - name: backend
+    image: kumarsumit74604/backtend-wanderlust:latestkumarsumit74604/frontend-wanderlust:latest
+    ports:
+    - containerPort: 8080
