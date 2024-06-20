@@ -1,0 +1,86 @@
+pipeline {
+    agent any
+
+    environment {
+        // Define environment variables
+        SONAR_HOME = tool name: "SonarQube"
+    }
+
+       options {
+        timeout(time: 5, unit: 'MINUTES') // Setting a timeout for the entire pipeline
+    }
+
+    stages {
+        stage("Checkout code from GitHub") {
+            steps {
+                // Checkout code from GitHub
+                git url: "https://github.com/sumitkumar74604/wanderlust-Application.git", branch: "DevSecOps"
+            }
+        }
+
+        stage("SonarQube Quality Analysis") {
+            steps {
+                script {
+                    // Run SonarQube analysis
+                    withSonarQubeEnv('SonarQube') {
+                        sh "$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=wanderlust-Application -Dsonar.projectKey=wanderlust-Application"
+                    }
+                }
+            }
+        }
+
+        stage("OWASP Dependency Check ") {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'OWASPdc'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml', allowEmptyArchive: true
+            }
+        }
+
+        // stage('OWASP Dependency Check') {
+        //     steps {
+        //         script {
+        //             // Run OWASP Dependency Check
+        //             dependencyCheck additionalArguments: '--scan .', odcInstallation: 'OWASPdc'
+        //             archiveArtifacts artifacts: '**/dependency-check-report.xml', allowEmptyArchive: true
+        //         }
+        //     }
+        // }
+
+       stage('Sonar Quality Gate Scan') {
+            steps {
+                script {
+                    timeout(time: 5, unit: 'MINUTES') {
+                        // Wait for SonarQube quality gate
+                        waitForQualityGate abortPipeline: false
+                    }
+                }
+            }
+        }
+
+        stage('Trivy File System Scan') {
+            steps {
+                script {
+                    // Run Trivy file system scan
+                    sh 'trivy fs --format table -o trivy-fs-report.html .'
+                }
+            }
+        }
+
+        stage('Deploy using Docker Compose') {
+            steps {
+                script {
+                    // Stop and start Docker containers using Docker Compose
+                    sh 'docker-compose down -d'
+                    sh 'docker-compose up -d'
+                }
+            }
+        }
+
+        stage("End") {
+            steps {
+                echo "End of Code"
+                // Add final steps here
+            }
+        }
+    }
+}
