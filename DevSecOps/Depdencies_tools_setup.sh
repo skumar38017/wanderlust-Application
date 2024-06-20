@@ -40,3 +40,17 @@ sudo jenkins --version
 # status 
 sudo systemctl status jenkins
   
+
+##############################################################################################
+############################### Trivy #######################################################
+##############################################################################################
+
+sudo apt-get install wget apt-transport-https gnupg lsb-release
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
+sudo apt-get update -y
+sudo apt-get install trivy -y
+sudo apt-get upgrade -y
+
+# Version
+Trivy --version
