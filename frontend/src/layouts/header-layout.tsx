@@ -18,11 +18,8 @@ function header() {
               <ThemeToggle />
             </div>
             <button
-<<<<<<< HEAD
               className="active:scale-click hidden rounded border border-slate-50 px-4 py-2 hover:bg-slate-500/25 md:inline-block"
-=======
               className="scale-click hidden rounded border border-slate-50 px-4 py-2 hover:bg-slate-500/25 md:inline-block"
->>>>>>> master
               onClick={() => {
                 navigate('/add-blog');
               }}

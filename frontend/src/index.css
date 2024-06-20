@@ -1,19 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer components {
-<<<<<<< HEAD
   .scale-hover {
     transform: scale(1.12);
   }
   .scale-click {
-=======
   .scale-hover:hover {
     transform: scale(1.12);
   }
   .scale-click:active {
->>>>>>> master
     transform: scale(0.95);
   }
 }

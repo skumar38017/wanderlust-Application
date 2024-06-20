@@ -9,14 +9,11 @@ export default function PostCard({ post, testId = 'postcard' }: { post: Post } &
   const navigate = useNavigate();
   const slug = createSlug(post.title);
   return (
-<<<<<<< HEAD
     <div
       className={`active:scale-click group w-full md:w-1/2 lg:w-1/3 xl:w-1/4`}
       data-testid={testId}
     >
-=======
     <div className={`scale-click group w-full md:w-1/2 lg:w-1/3 xl:w-1/4`} data-testid={testId}>
->>>>>>> master
       <div
         className={`mb-4 cursor-pointer rounded-lg bg-light shadow-md dark:bg-dark-card ${'md:mr-8 md:mt-4'}`}
         onClick={() => navigate(`/details-page/${slug}/${post._id}`, { state: { post } })}
@@ -25,11 +22,8 @@ export default function PostCard({ post, testId = 'postcard' }: { post: Post } &
           <img
             src={post.imageLink}
             alt={post.title}
-<<<<<<< HEAD
             className={`sm:group-hover:scale-hover h-full w-full rounded-t-lg object-cover transition-transform ease-in-out`}
-=======
             className={`sm:scale-hover h-full w-full rounded-t-lg object-cover transition-transform ease-in-out`}
->>>>>>> master
           />
         </div>
         <div className="p-3">

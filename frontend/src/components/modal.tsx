@@ -66,22 +66,16 @@ const ModalComponent: React.FC<ModalProps> = ({
                   <button
                     type="button"
                     name="imageLink"
-<<<<<<< HEAD
                     className="active:scale-click inline-flex w-full justify-center rounded-md bg-light-primary px-3 py-2 text-sm font-semibold text-light shadow-sm hover:bg-light-secondary dark:bg-dark-primary dark:text-dark dark:hover:bg-dark-secondary sm:ml-3 sm:w-auto"
-=======
                     className="scale-click inline-flex w-full justify-center rounded-md bg-light-primary px-3 py-2 text-sm font-semibold text-light shadow-sm hover:bg-light-secondary dark:bg-dark-primary dark:text-dark dark:hover:bg-dark-secondary sm:ml-3 sm:w-auto"
->>>>>>> master
                     onClick={handleSelector}
                   >
                     Select
                   </button>
                   <button
                     type="button"
-<<<<<<< HEAD
                     className="active:scale-click mt-3 inline-flex w-full justify-center rounded-md bg-light px-3 py-2 text-sm font-semibold text-light-primary shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-200 dark:bg-dark dark:text-dark-primary dark:hover:bg-dark-secondary/25 sm:mt-0 sm:w-auto"
-=======
                     className="scale-click mt-3 inline-flex w-full justify-center rounded-md bg-light px-3 py-2 text-sm font-semibold text-light-primary shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-200 dark:bg-dark dark:text-dark-primary dark:hover:bg-dark-secondary/25 sm:mt-0 sm:w-auto"
->>>>>>> master
                     onClick={() => {
                       setModal(false);
                     }}
