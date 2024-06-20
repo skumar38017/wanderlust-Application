@@ -133,10 +133,6 @@ function AddBlog() {
             />
           </div>
           <h2 className="cursor-text text-lg font-semibold text-light-primary dark:text-dark-primary md:text-xl lg:text-2xl">
-              className="h-5 w-10"
-            />
-          </div>
-          <h2 className="text-lg font-semibold text-light-primary dark:text-dark-primary md:text-xl lg:text-2xl">
             Create Blog
           </h2>
         </div>
@@ -152,7 +148,6 @@ function AddBlog() {
                 type="checkbox"
                 name="isFeaturedPost"
                 className="ml-2 h-5 w-5 cursor-pointer rounded-full accent-purple-400"
-                className="ml-2 h-5 w-5 rounded-full accent-purple-400 "
                 checked={formData.isFeaturedPost}
                 onChange={handleCheckboxChange}
               />
@@ -223,9 +218,6 @@ function AddBlog() {
             <button
               type="button"
               className="lg:text-md active:scale-click w-1/4 rounded-lg bg-light-primary text-xs text-slate-50 hover:bg-light-primary/80 dark:bg-dark-primary dark:text-dark-card dark:hover:bg-dark-secondary/80 md:text-sm lg:w-2/12 lg:px-4 lg:py-3"
-
-              className="lg:text-md scale-click w-1/4 rounded-lg bg-light-primary text-xs text-slate-50 hover:bg-light-primary/80 dark:bg-dark-primary dark:text-dark-card dark:hover:bg-dark-secondary/80 md:text-sm lg:w-2/12 lg:px-4 lg:py-3"
-
               onClick={() => {
                 setmodal(true);
               }}
@@ -256,11 +248,7 @@ function AddBlog() {
 
           <button
             type="submit"
-
             className="active:scale-click flex w-full items-center justify-center rounded-lg bg-light-primary px-12 py-3 text-base font-semibold text-light hover:bg-light-primary/80 dark:bg-dark-primary dark:text-dark-card dark:hover:bg-dark-secondary/80 md:mx-1 md:w-fit"
-
-            className="scale-click flex w-full items-center justify-center rounded-lg bg-light-primary px-12 py-3 text-base font-semibold text-light hover:bg-light-primary/80 dark:bg-dark-primary dark:text-dark-card dark:hover:bg-dark-secondary/80 md:mx-1 md:w-fit"
-
           >
             Post blog
           </button>

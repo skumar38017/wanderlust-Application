@@ -7,11 +7,6 @@
     transform: scale(1.12);
   }
   .scale-click {
-  .scale-hover:hover {
-    transform: scale(1.12);
-  }
-  .scale-click:active {
     transform: scale(0.95);
   }
-}
 }
