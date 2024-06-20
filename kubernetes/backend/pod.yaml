@@ -8,6 +8,6 @@ metadata:
 spec:
   containers:
   - name: backend
-    image: kumarsumit74604/backtend-wanderlust:latestkumarsumit74604/frontend-wanderlust:latest
+    image: kumarsumit74604/backtend-wanderlust:latest
     ports:
-    - containerPort: 8080
+    - containerPort: 5000
