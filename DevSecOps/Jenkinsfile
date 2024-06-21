@@ -32,7 +32,7 @@ pipeline {
         stage("OWASP Dependency Check ") {
             steps {
                 dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'OWASPdc'
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml', allowEmptyArchive: true
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
 
@@ -46,13 +46,9 @@ pipeline {
                 }
             }
         }
-
-        stage('Trivy File System Scan') {
+        stage("Trivy File system Scan ") {
             steps {
-                script {
-                    // Run Trivy file system scan
-                    sh 'trivy fs --format table -o trivy-fs-report.html .'
-                }
+                sh "trivy fs --format table -o trivy-fs-report.html ."
             }
         }
 
@@ -61,11 +57,10 @@ pipeline {
                 script {
                     // Stop and start Docker containers using Docker Compose
                     sh 'docker-compose down -v'
-                    sh 'docker-compose up -d'
+                    sh 'docker-compose up --build --force-recreate -d'
                 }
             }
         }
-
         stage("End") {
             steps {
                 echo "End of Code"
